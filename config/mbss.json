@@ -1,0 +1,660 @@
+{
+  "name": "Stride Minimum Baseline Security Standard",
+  "version": "1.0",
+  "source": "CIS AWS Foundations Benchmark v3.0.0 and CIS Amazon Linux 2 Benchmark",
+  "signed_off_by": "Rahul Nair (Head of IT)",
+  "note": "accepted=false marks a CIS control the firm reviewed and chose not to adopt. It is still checked in the initial assessment but is not enforced or drift-monitored.",
+  "controls": [
+    {
+      "id": "IAM.1",
+      "cis_ref": "CIS AWS 1.5",
+      "domain": "Identity and access",
+      "severity": "critical",
+      "accepted": true,
+      "title": "MFA is enabled for the root user",
+      "check": {
+        "type": "attr",
+        "collection": "account",
+        "field": "root_mfa",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "manual"
+      },
+      "recommendation": "Sign in as root and register an MFA device. This cannot be automated.",
+      "cloudtrail_events": [
+        "DeactivateMFADevice",
+        "DeleteVirtualMFADevice"
+      ],
+      "finding": "The root user has no MFA device"
+    },
+    {
+      "id": "IAM.2",
+      "cis_ref": "CIS AWS 1.8",
+      "domain": "Identity and access",
+      "severity": "medium",
+      "accepted": true,
+      "title": "IAM password policy requires a minimum length of 14",
+      "check": {
+        "type": "attr",
+        "collection": "account",
+        "field": "password_policy.min_length",
+        "op": "ge",
+        "value": 14
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "set_password_policy"
+      },
+      "recommendation": "Set the account password policy minimum length to 14 or more.",
+      "cloudtrail_events": [
+        "UpdateAccountPasswordPolicy",
+        "DeleteAccountPasswordPolicy"
+      ],
+      "finding": "The password policy allows passwords as short as {actual} characters; the baseline requires 14"
+    },
+    {
+      "id": "IAM.3",
+      "cis_ref": "CIS AWS 1.9",
+      "domain": "Identity and access",
+      "severity": "low",
+      "accepted": true,
+      "title": "IAM password policy prevents reuse of the last 24 passwords",
+      "check": {
+        "type": "attr",
+        "collection": "account",
+        "field": "password_policy.reuse_prevention",
+        "op": "ge",
+        "value": 24
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "set_password_policy"
+      },
+      "recommendation": "Set password reuse prevention to 24.",
+      "cloudtrail_events": [
+        "UpdateAccountPasswordPolicy",
+        "DeleteAccountPasswordPolicy"
+      ],
+      "finding": "The password policy remembers only {actual} previous passwords; the baseline requires 24"
+    },
+    {
+      "id": "IAM.4",
+      "cis_ref": "CIS AWS 1.10",
+      "domain": "Identity and access",
+      "severity": "high",
+      "accepted": true,
+      "title": "MFA is enabled for all IAM users with a console password",
+      "check": {
+        "type": "attr",
+        "collection": "iam_users",
+        "where": {
+          "console_access": true
+        },
+        "field": "mfa",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "manual"
+      },
+      "recommendation": "Have the user register an MFA device, or remove their console password.",
+      "cloudtrail_events": [
+        "DeactivateMFADevice",
+        "CreateLoginProfile"
+      ],
+      "finding": "This user can sign in to the console without MFA"
+    },
+    {
+      "id": "IAM.5",
+      "cis_ref": "CIS AWS 1.14",
+      "domain": "Identity and access",
+      "severity": "medium",
+      "accepted": true,
+      "title": "Access keys are rotated every 90 days or less",
+      "check": {
+        "type": "attr",
+        "collection": "iam_users",
+        "field": "access_key_age_days",
+        "op": "le",
+        "value": 90
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "deactivate_old_access_keys"
+      },
+      "recommendation": "Create a new access key, update the applications that use it, then deactivate the old key.",
+      "cloudtrail_events": [
+        "CreateAccessKey",
+        "UpdateAccessKey"
+      ],
+      "finding": "This user's access key is {actual} days old; the limit is 90"
+    },
+    {
+      "id": "IAM.6",
+      "cis_ref": "CIS AWS 1.16",
+      "domain": "Identity and access",
+      "severity": "high",
+      "accepted": true,
+      "title": "No IAM user has a full administrator policy attached directly",
+      "check": {
+        "type": "attr",
+        "collection": "iam_users",
+        "field": "admin_policy",
+        "op": "eq",
+        "value": false
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "detach_admin_policy"
+      },
+      "recommendation": "Detach AdministratorAccess and grant only the permissions the user needs, through a group or role.",
+      "cloudtrail_events": [
+        "AttachUserPolicy",
+        "PutUserPolicy"
+      ],
+      "finding": "This user has the full administrator policy attached directly"
+    },
+    {
+      "id": "IAM.7",
+      "cis_ref": "CIS AWS 1.6",
+      "domain": "Identity and access",
+      "severity": "low",
+      "accepted": false,
+      "exclusion_reason": "A virtual MFA device on root is accepted for a firm of this size; hardware tokens are not issued.",
+      "title": "Hardware MFA is enabled for the root user",
+      "check": {
+        "type": "attr",
+        "collection": "account",
+        "field": "root_hardware_mfa",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "manual"
+      },
+      "recommendation": "Register a hardware MFA device for the root user.",
+      "cloudtrail_events": [],
+      "finding": "The root user is not protected by a hardware MFA device"
+    },
+    {
+      "id": "DP.1",
+      "cis_ref": "CIS AWS 2.1.4",
+      "domain": "Data protection",
+      "severity": "critical",
+      "accepted": true,
+      "title": "S3 buckets block public access",
+      "check": {
+        "type": "attr",
+        "collection": "s3_buckets",
+        "field": "public_access_blocked",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "block_s3_public_access"
+      },
+      "recommendation": "Turn on all four Block Public Access settings for the bucket.",
+      "cloudtrail_events": [
+        "PutBucketPublicAccessBlock",
+        "DeleteBucketPublicAccessBlock",
+        "PutBucketPolicy",
+        "PutBucketAcl"
+      ],
+      "finding": "Block Public Access is off, so the bucket can be made public"
+    },
+    {
+      "id": "DP.2",
+      "cis_ref": "CIS AWS 2.1.1",
+      "domain": "Data protection",
+      "severity": "medium",
+      "accepted": true,
+      "title": "S3 bucket policy denies requests that do not use HTTPS",
+      "check": {
+        "type": "attr",
+        "collection": "s3_buckets",
+        "field": "ssl_enforced",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enforce_s3_ssl"
+      },
+      "recommendation": "Add a bucket policy statement that denies requests where aws:SecureTransport is false.",
+      "cloudtrail_events": [
+        "PutBucketPolicy",
+        "DeleteBucketPolicy"
+      ],
+      "finding": "The bucket accepts unencrypted (HTTP) requests"
+    },
+    {
+      "id": "DP.3",
+      "cis_ref": "CIS AWS 2.1.3 (data recovery)",
+      "domain": "Data protection",
+      "severity": "low",
+      "accepted": true,
+      "title": "S3 bucket versioning is enabled",
+      "check": {
+        "type": "attr",
+        "collection": "s3_buckets",
+        "field": "versioning",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enable_s3_versioning"
+      },
+      "recommendation": "Enable versioning on the bucket.",
+      "cloudtrail_events": [
+        "PutBucketVersioning"
+      ],
+      "finding": "Versioning is off, so deleted or overwritten objects cannot be recovered"
+    },
+    {
+      "id": "DP.4",
+      "cis_ref": "CIS AWS 2.2.1",
+      "domain": "Data protection",
+      "severity": "medium",
+      "accepted": true,
+      "title": "EBS encryption by default is enabled",
+      "check": {
+        "type": "attr",
+        "collection": "account",
+        "field": "ebs_default_encryption",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enable_ebs_default_encryption"
+      },
+      "recommendation": "Enable EBS encryption by default in the region.",
+      "cloudtrail_events": [
+        "DisableEbsEncryptionByDefault"
+      ],
+      "finding": "New disks are not encrypted by default"
+    },
+    {
+      "id": "DP.5",
+      "cis_ref": "CIS AWS 2.2.1 (existing volumes)",
+      "domain": "Data protection",
+      "severity": "high",
+      "accepted": true,
+      "title": "EBS volumes attached to servers are encrypted",
+      "check": {
+        "type": "attr",
+        "collection": "instances",
+        "field": "volumes_encrypted",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "manual"
+      },
+      "recommendation": "Snapshot the volume, copy the snapshot with encryption, and replace the volume in a downtime window.",
+      "cloudtrail_events": [
+        "AttachVolume",
+        "RunInstances"
+      ],
+      "finding": "The server has a disk that is not encrypted"
+    },
+    {
+      "id": "DP.6",
+      "cis_ref": "CIS AWS 2.1.2",
+      "domain": "Data protection",
+      "severity": "low",
+      "accepted": false,
+      "exclusion_reason": "MFA delete needs the root user for every change and is judged impractical; versioning is enforced instead.",
+      "title": "MFA delete is enabled on S3 buckets",
+      "check": {
+        "type": "attr",
+        "collection": "s3_buckets",
+        "field": "mfa_delete",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "manual"
+      },
+      "recommendation": "Enable MFA delete using the root user's credentials.",
+      "cloudtrail_events": [],
+      "finding": "MFA delete is off"
+    },
+    {
+      "id": "NET.1",
+      "cis_ref": "CIS AWS 5.2",
+      "domain": "Network",
+      "severity": "high",
+      "accepted": true,
+      "title": "No security group allows SSH (port 22) from the internet",
+      "check": {
+        "type": "sg_world_ingress",
+        "ports": [
+          22
+        ]
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "revoke_world_ingress"
+      },
+      "recommendation": "Remove the 0.0.0.0/0 rule for port 22 and use Systems Manager Session Manager or a restricted source range.",
+      "cloudtrail_events": [
+        "AuthorizeSecurityGroupIngress",
+        "ModifySecurityGroupRules"
+      ]
+    },
+    {
+      "id": "NET.2",
+      "cis_ref": "CIS AWS 5.3",
+      "domain": "Network",
+      "severity": "high",
+      "accepted": true,
+      "title": "No security group allows RDP (port 3389) from the internet",
+      "check": {
+        "type": "sg_world_ingress",
+        "ports": [
+          3389
+        ]
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "revoke_world_ingress"
+      },
+      "recommendation": "Remove the 0.0.0.0/0 rule for port 3389.",
+      "cloudtrail_events": [
+        "AuthorizeSecurityGroupIngress",
+        "ModifySecurityGroupRules"
+      ]
+    },
+    {
+      "id": "NET.3",
+      "cis_ref": "CIS AWS 5.4",
+      "domain": "Network",
+      "severity": "medium",
+      "accepted": true,
+      "title": "The default security group of every VPC restricts all traffic",
+      "check": {
+        "type": "attr",
+        "collection": "security_groups",
+        "where": {
+          "is_default": true
+        },
+        "field": "ingress",
+        "op": "eq",
+        "value": []
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "clear_default_sg"
+      },
+      "recommendation": "Remove all rules from the default security group and move resources to purpose-built groups.",
+      "cloudtrail_events": [
+        "AuthorizeSecurityGroupIngress",
+        "ModifySecurityGroupRules"
+      ],
+      "finding": "The default security group still has rules"
+    },
+    {
+      "id": "NET.4",
+      "cis_ref": "CIS AWS 5.2 (database ports)",
+      "domain": "Network",
+      "severity": "critical",
+      "accepted": true,
+      "title": "No security group allows database ports (3306, 5432) from the internet",
+      "check": {
+        "type": "sg_world_ingress",
+        "ports": [
+          3306,
+          5432
+        ]
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "revoke_world_ingress"
+      },
+      "recommendation": "Remove the 0.0.0.0/0 rule and allow the database port only from the application tier.",
+      "cloudtrail_events": [
+        "AuthorizeSecurityGroupIngress",
+        "ModifySecurityGroupRules"
+      ]
+    },
+    {
+      "id": "LOG.1",
+      "cis_ref": "CIS AWS 3.1",
+      "domain": "Logging and monitoring",
+      "severity": "high",
+      "accepted": true,
+      "title": "CloudTrail is enabled in all regions",
+      "check": {
+        "type": "attr",
+        "collection": "trails",
+        "field": "multi_region",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enable_trail_multi_region"
+      },
+      "recommendation": "Make the trail a multi-region trail.",
+      "cloudtrail_events": [
+        "UpdateTrail",
+        "StopLogging"
+      ],
+      "finding": "The audit trail only covers one region"
+    },
+    {
+      "id": "LOG.2",
+      "cis_ref": "CIS AWS 3.2",
+      "domain": "Logging and monitoring",
+      "severity": "medium",
+      "accepted": true,
+      "title": "CloudTrail log file validation is enabled",
+      "check": {
+        "type": "attr",
+        "collection": "trails",
+        "field": "log_validation",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enable_trail_log_validation"
+      },
+      "recommendation": "Enable log file validation on the trail.",
+      "cloudtrail_events": [
+        "UpdateTrail"
+      ],
+      "finding": "Log file validation is off, so tampering with audit logs would go unnoticed"
+    },
+    {
+      "id": "LOG.3",
+      "cis_ref": "CIS AWS 3.3",
+      "domain": "Logging and monitoring",
+      "severity": "high",
+      "accepted": true,
+      "title": "AWS Config recording is enabled",
+      "check": {
+        "type": "attr",
+        "collection": "account",
+        "field": "config_recorder",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "start_config_recorder"
+      },
+      "recommendation": "Start the AWS Config configuration recorder.",
+      "cloudtrail_events": [
+        "StopConfigurationRecorder",
+        "DeleteConfigurationRecorder"
+      ],
+      "finding": "AWS Config recording is stopped"
+    },
+    {
+      "id": "LOG.4",
+      "cis_ref": "CIS AWS 3.7",
+      "domain": "Logging and monitoring",
+      "severity": "medium",
+      "accepted": true,
+      "title": "VPC flow logging is enabled",
+      "check": {
+        "type": "attr",
+        "collection": "vpcs",
+        "field": "flow_logs",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enable_flow_logs"
+      },
+      "recommendation": "Create a flow log for the VPC that captures rejected traffic at minimum.",
+      "cloudtrail_events": [
+        "DeleteFlowLogs"
+      ],
+      "finding": "Network flow logging is off"
+    },
+    {
+      "id": "LOG.5",
+      "cis_ref": "CIS AWS 3.4",
+      "domain": "Logging and monitoring",
+      "severity": "low",
+      "accepted": true,
+      "title": "S3 server access logging is enabled on buckets",
+      "check": {
+        "type": "attr",
+        "collection": "s3_buckets",
+        "field": "access_logging",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "enable_s3_logging"
+      },
+      "recommendation": "Enable server access logging to the central log bucket.",
+      "cloudtrail_events": [
+        "PutBucketLogging"
+      ],
+      "finding": "Access to the bucket is not being logged"
+    },
+    {
+      "id": "SRV.1",
+      "cis_ref": "CIS AWS 5.6",
+      "domain": "Server security",
+      "severity": "high",
+      "accepted": true,
+      "title": "EC2 instances require IMDSv2",
+      "check": {
+        "type": "attr",
+        "collection": "instances",
+        "field": "imdsv2_required",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "require_imdsv2"
+      },
+      "recommendation": "Set the instance metadata option HttpTokens to required.",
+      "cloudtrail_events": [
+        "ModifyInstanceMetadataOptions",
+        "RunInstances"
+      ],
+      "finding": "The server still accepts the older, weaker metadata service (IMDSv1)"
+    },
+    {
+      "id": "SRV.2",
+      "cis_ref": "AWS FSBP SSM.1",
+      "domain": "Server security",
+      "severity": "medium",
+      "accepted": true,
+      "title": "EC2 instances are managed by Systems Manager",
+      "check": {
+        "type": "attr",
+        "collection": "instances",
+        "field": "ssm_managed",
+        "op": "eq",
+        "value": true
+      },
+      "remediation": {
+        "mode": "approval",
+        "action": "manual"
+      },
+      "recommendation": "Attach an instance profile with AmazonSSMManagedInstanceCore and confirm the SSM agent is running.",
+      "cloudtrail_events": [
+        "DisassociateIamInstanceProfile"
+      ],
+      "finding": "The server is not managed by Systems Manager, so it cannot be patched automatically"
+    },
+    {
+      "id": "SRV.3",
+      "cis_ref": "CIS Amazon Linux 2 5.2.10",
+      "domain": "Server security",
+      "severity": "high",
+      "accepted": true,
+      "title": "SSH root login is disabled",
+      "check": {
+        "type": "attr",
+        "collection": "instances",
+        "field": "os.permit_root_login",
+        "op": "eq",
+        "value": false
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "harden_sshd",
+        "params": {
+          "setting": "PermitRootLogin",
+          "value": "no"
+        }
+      },
+      "recommendation": "Set PermitRootLogin no in /etc/ssh/sshd_config and reload sshd.",
+      "cloudtrail_events": [
+        "SendCommand",
+        "StartSession"
+      ],
+      "finding": "Root can log in over SSH"
+    },
+    {
+      "id": "SRV.4",
+      "cis_ref": "CIS Amazon Linux 2 5.2 (authentication)",
+      "domain": "Server security",
+      "severity": "medium",
+      "accepted": true,
+      "title": "SSH password authentication is disabled",
+      "check": {
+        "type": "attr",
+        "collection": "instances",
+        "field": "os.password_auth",
+        "op": "eq",
+        "value": false
+      },
+      "remediation": {
+        "mode": "auto",
+        "action": "harden_sshd",
+        "params": {
+          "setting": "PasswordAuthentication",
+          "value": "no"
+        }
+      },
+      "recommendation": "Set PasswordAuthentication no in /etc/ssh/sshd_config and reload sshd.",
+      "cloudtrail_events": [
+        "SendCommand",
+        "StartSession"
+      ],
+      "finding": "SSH accepts passwords instead of keys only"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "generated_at": "2026-01-19T09:00:00Z",
+  "provider": "mock",
+  "assessment": {
+    "planted_config_issues": 26,
+    "detected": 26,
+    "detection_rate_pct": 100.0,
+    "missed": [],
+    "false_positives": [],
+    "by_domain": {
+      "Identity and access": {
+        "planted": 6,
+        "detected": 6
+      },
+      "Data protection": {
+        "planted": 8,
+        "detected": 8
+      },
+      "Network": {
+        "planted": 4,
+        "detected": 4
+      },
+      "Logging and monitoring": {
+        "planted": 4,
+        "detected": 4
+      },
+      "Server security": {
+        "planted": 4,
+        "detected": 4
+      }
+    },
+    "planted_vulnerabilities": 14,
+    "vulnerabilities_detected": 14,
+    "vulnerability_detection_rate_pct": 100.0
+  },
+  "drift": {
+    "drift_events": 5,
+    "attributed": 5,
+    "mean_time_to_detect_min": 4.0,
+    "mean_time_to_remediate_min_auto": 0.0,
+    "mean_time_to_remediate_min_approval": 39.0,
+    "auto_remediated": 4,
+    "remediated_after_approval": 1,
+    "accepted_as_exception": 0,
+    "unresolved": 0,
+    "injected": 5,
+    "detected_of_injected": 5,
+    "attribution_correct": 5,
+    "attribution_accuracy_pct": 100.0
+  },
+  "vulnerabilities": {
+    "total": 14,
+    "fixed": 14,
+    "open": 0,
+    "open_past_deadline": 0,
+    "fixed_within_deadline": 12,
+    "fixed_within_deadline_pct": 85.7,
+    "zero_day_note": "zero-day tickets count as on time when fixed within 48 hours of detection",
+    "mean_days_to_fix": 8.0
+  },
+  "patching": {
+    "jobs": 5,
+    "succeeded": 4,
+    "rolled_back": 1,
+    "failed_without_rollback": 0,
+    "patch_success_rate_pct": 80.0,
+    "rollback_rate_pct": 20.0
+  },
+  "risk": [
+    {
+      "bu": "Online Store",
+      "goal_line": 30,
+      "initial": 145.6,
+      "peak": 145.6,
+      "latest": 0.0,
+      "within_goal": true
+    },
+    {
+      "bu": "Manufacturing",
+      "goal_line": 20,
+      "initial": 39.7,
+      "peak": 39.7,
+      "latest": 0.0,
+      "within_goal": true
+    },
+    {
+      "bu": "Finance and HR",
+      "goal_line": 25,
+      "initial": 70.4,
+      "peak": 70.4,
+      "latest": 0.0,
+      "within_goal": true
+    },
+    {
+      "bu": "Shared Platform (IT)",
+      "goal_line": 15,
+      "initial": 55.0,
+      "peak": 55.0,
+      "latest": 0.0,
+      "within_goal": true
+    }
+  ]
+}

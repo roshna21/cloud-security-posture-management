@@ -1,0 +1,107 @@
+{
+  "account": {
+    "id": "account",
+    "name": "AWS account",
+    "bu": "platform",
+    "root_mfa": false,
+    "root_hardware_mfa": false,
+    "password_policy": {"min_length": 8, "reuse_prevention": 24},
+    "ebs_default_encryption": false,
+    "config_recorder": true
+  },
+  "iam_users": [
+    {"id": "ops-admin", "name": "ops-admin", "bu": "platform", "console_access": true, "mfa": false, "access_key_age_days": 20, "admin_policy": true},
+    {"id": "dev-priya", "name": "dev-priya", "bu": "platform", "console_access": true, "mfa": true, "access_key_age_days": 200, "admin_policy": false},
+    {"id": "finance-app-svc", "name": "finance-app-svc", "bu": "finance-hr", "console_access": false, "mfa": false, "access_key_age_days": 30, "admin_policy": false},
+    {"id": "security-auditor", "name": "security-auditor", "bu": "platform", "console_access": true, "mfa": true, "access_key_age_days": 0, "admin_policy": false}
+  ],
+  "s3_buckets": [
+    {"id": "stride-product-images", "name": "stride-product-images", "bu": "online-store", "public_access_blocked": false, "ssl_enforced": false, "versioning": true, "access_logging": true, "mfa_delete": false},
+    {"id": "stride-finance-reports", "name": "stride-finance-reports", "bu": "finance-hr", "public_access_blocked": true, "ssl_enforced": true, "versioning": false, "access_logging": false, "mfa_delete": false},
+    {"id": "stride-cloudtrail-logs", "name": "stride-cloudtrail-logs", "bu": "platform", "public_access_blocked": true, "ssl_enforced": true, "versioning": true, "access_logging": true, "mfa_delete": false}
+  ],
+  "security_groups": [
+    {"id": "sg-web-0001", "name": "store-web-sg", "bu": "online-store", "is_default": false, "ingress": [
+      {"protocol": "tcp", "from_port": 443, "to_port": 443, "cidr": "0.0.0.0/0"},
+      {"protocol": "tcp", "from_port": 80, "to_port": 80, "cidr": "0.0.0.0/0"},
+      {"protocol": "tcp", "from_port": 22, "to_port": 22, "cidr": "0.0.0.0/0"}
+    ]},
+    {"id": "sg-db-0002", "name": "store-db-sg", "bu": "online-store", "is_default": false, "ingress": [
+      {"protocol": "tcp", "from_port": 5432, "to_port": 5432, "cidr": "10.0.0.0/16"}
+    ]},
+    {"id": "sg-mfg-0003", "name": "mfg-erp-sg", "bu": "manufacturing", "is_default": false, "ingress": [
+      {"protocol": "tcp", "from_port": 8443, "to_port": 8443, "cidr": "10.0.0.0/16"},
+      {"protocol": "tcp", "from_port": 3389, "to_port": 3389, "cidr": "0.0.0.0/0"}
+    ]},
+    {"id": "sg-fin-0004", "name": "fin-payroll-sg", "bu": "finance-hr", "is_default": false, "ingress": [
+      {"protocol": "tcp", "from_port": 22, "to_port": 22, "cidr": "10.0.0.0/16"},
+      {"protocol": "tcp", "from_port": 3306, "to_port": 3306, "cidr": "0.0.0.0/0"}
+    ]},
+    {"id": "sg-default-0005", "name": "default", "bu": "platform", "is_default": true, "ingress": [
+      {"protocol": "-1", "from_port": 0, "to_port": 65535, "cidr": "10.0.0.0/16"}
+    ]}
+  ],
+  "vpcs": [
+    {"id": "vpc-stride-0001", "name": "stride-vpc", "bu": "platform", "flow_logs": false}
+  ],
+  "trails": [
+    {"id": "stride-trail", "name": "stride-trail", "bu": "platform", "multi_region": false, "log_validation": false}
+  ],
+  "instances": [
+    {
+      "id": "i-0a1b2c3d4e5f60001", "name": "store-web-01", "bu": "online-store",
+      "owner": "Karthik Menon", "owner_email": "karthik.menon@stride.example",
+      "criticality": "high", "internet_facing": true,
+      "imdsv2_required": false, "ssm_managed": true, "volumes_encrypted": false,
+      "os": {"permit_root_login": true, "password_auth": false},
+      "services": ["nginx", "storefront-api"]
+    },
+    {
+      "id": "i-0a1b2c3d4e5f60002", "name": "store-db-01", "bu": "online-store",
+      "owner": "Karthik Menon", "owner_email": "karthik.menon@stride.example",
+      "criticality": "high", "internet_facing": false,
+      "imdsv2_required": true, "ssm_managed": true, "volumes_encrypted": true,
+      "os": {"permit_root_login": false, "password_auth": false},
+      "services": ["postgresql"]
+    },
+    {
+      "id": "i-0a1b2c3d4e5f60003", "name": "mfg-erp-01", "bu": "manufacturing",
+      "owner": "Divya Pillai", "owner_email": "divya.pillai@stride.example",
+      "criticality": "medium", "internet_facing": false,
+      "imdsv2_required": true, "ssm_managed": true, "volumes_encrypted": true,
+      "os": {"permit_root_login": false, "password_auth": true},
+      "services": ["erp-app", "mariadb"]
+    },
+    {
+      "id": "i-0a1b2c3d4e5f60004", "name": "fin-payroll-01", "bu": "finance-hr",
+      "owner": "Suresh Kumar", "owner_email": "suresh.kumar@stride.example",
+      "criticality": "high", "internet_facing": false,
+      "imdsv2_required": false, "ssm_managed": true, "volumes_encrypted": true,
+      "os": {"permit_root_login": false, "password_auth": false},
+      "services": ["payroll-app", "mysqld"]
+    }
+  ],
+  "vulnerabilities": [
+    {"instance_id": "i-0a1b2c3d4e5f60001", "cve": "CVE-2021-44228", "package": "log4j-core", "installed_version": "2.14.1", "fixed_version": "2.17.1"},
+    {"instance_id": "i-0a1b2c3d4e5f60001", "cve": "CVE-2023-44487", "package": "nginx", "installed_version": "1.20.0", "fixed_version": "1.25.3"},
+    {"instance_id": "i-0a1b2c3d4e5f60001", "cve": "CVE-2024-6387", "package": "openssh", "installed_version": "8.7p1", "fixed_version": "9.8p1"},
+    {"instance_id": "i-0a1b2c3d4e5f60001", "cve": "CVE-2023-48795", "package": "openssh", "installed_version": "8.7p1", "fixed_version": "9.6p1"},
+    {"instance_id": "i-0a1b2c3d4e5f60002", "cve": "CVE-2023-4911", "package": "glibc", "installed_version": "2.34-60", "fixed_version": "2.34-83"},
+    {"instance_id": "i-0a1b2c3d4e5f60002", "cve": "CVE-2023-2650", "package": "openssl", "installed_version": "3.0.7", "fixed_version": "3.0.9"},
+    {"instance_id": "i-0a1b2c3d4e5f60003", "cve": "CVE-2021-3156", "package": "sudo", "installed_version": "1.8.23", "fixed_version": "1.9.5p2"},
+    {"instance_id": "i-0a1b2c3d4e5f60003", "cve": "CVE-2021-4034", "package": "polkit", "installed_version": "0.112", "fixed_version": "0.120"},
+    {"instance_id": "i-0a1b2c3d4e5f60003", "cve": "CVE-2022-0847", "package": "kernel", "installed_version": "5.10.90", "fixed_version": "5.10.102"},
+    {"instance_id": "i-0a1b2c3d4e5f60003", "cve": "CVE-2023-5678", "package": "openssl", "installed_version": "1.0.2k", "fixed_version": "1.0.2zj"},
+    {"instance_id": "i-0a1b2c3d4e5f60004", "cve": "CVE-2023-38408", "package": "openssh", "installed_version": "7.4p1", "fixed_version": "9.3p2"},
+    {"instance_id": "i-0a1b2c3d4e5f60004", "cve": "CVE-2022-22965", "package": "spring-webmvc", "installed_version": "5.3.15", "fixed_version": "5.3.18"},
+    {"instance_id": "i-0a1b2c3d4e5f60004", "cve": "CVE-2023-0286", "package": "openssl", "installed_version": "1.1.1k", "fixed_version": "1.1.1t"},
+    {"instance_id": "i-0a1b2c3d4e5f60004", "cve": "CVE-2020-1971", "package": "openssl", "installed_version": "1.1.1g", "fixed_version": "1.1.1i"}
+  ],
+  "cloudtrail": [],
+  "_sim": {
+    "patch_fail_once": ["i-0a1b2c3d4e5f60003"],
+    "snapshots": {},
+    "stopped_services": {},
+    "injected_drifts": []
+  }
+}

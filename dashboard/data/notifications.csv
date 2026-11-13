@@ -1,0 +1,226 @@
+id,at,recipient,subject,body
+1,2026-01-05T09:00:00Z,karthik.menon@stride.example,URGENT: 4 new vulnerability ticket(s) for store-web-01,"Hello Karthik Menon,
+
+The following vulnerabilities were found on store-web-01:
+  TKT-0001  CVE-2021-44228   zero-day  CVSS 10.0  due 2026-01-05
+  TKT-0003  CVE-2024-6387    high      CVSS 8.1   due 2026-02-02
+  TKT-0002  CVE-2023-44487   high      CVSS 7.5   due 2026-02-02
+  TKT-0004  CVE-2023-48795   medium    CVSS 5.9   due 2026-04-05
+
+You can patch now (self-service):
+  python -m cspm patch now --server store-web-01
+or leave it to the next agreed downtime window (SUN 01:00 UTC, 2h). A snapshot is taken before patching and the server is rolled back if health checks fail."
+2,2026-01-05T09:00:00Z,karthik.menon@stride.example,2 new vulnerability ticket(s) for store-db-01,"Hello Karthik Menon,
+
+The following vulnerabilities were found on store-db-01:
+  TKT-0005  CVE-2023-4911    high      CVSS 7.8   due 2026-02-02
+  TKT-0006  CVE-2023-2650    medium    CVSS 6.5   due 2026-04-05
+
+You can patch now (self-service):
+  python -m cspm patch now --server store-db-01
+or leave it to the next agreed downtime window (SUN 01:00 UTC, 2h). A snapshot is taken before patching and the server is rolled back if health checks fail."
+3,2026-01-05T09:00:00Z,divya.pillai@stride.example,4 new vulnerability ticket(s) for mfg-erp-01,"Hello Divya Pillai,
+
+The following vulnerabilities were found on mfg-erp-01:
+  TKT-0007  CVE-2021-3156    high      CVSS 7.8   due 2026-02-02
+  TKT-0008  CVE-2021-4034    high      CVSS 7.8   due 2026-02-02
+  TKT-0009  CVE-2022-0847    high      CVSS 7.8   due 2026-02-02
+  TKT-0010  CVE-2023-5678    medium    CVSS 5.3   due 2026-04-05
+
+You can patch now (self-service):
+  python -m cspm patch now --server mfg-erp-01
+or leave it to the next agreed downtime window (SAT 20:00 UTC, 3h). A snapshot is taken before patching and the server is rolled back if health checks fail."
+4,2026-01-05T09:00:00Z,suresh.kumar@stride.example,4 new vulnerability ticket(s) for fin-payroll-01,"Hello Suresh Kumar,
+
+The following vulnerabilities were found on fin-payroll-01:
+  TKT-0011  CVE-2023-38408   critical  CVSS 9.8   due 2026-01-12
+  TKT-0012  CVE-2022-22965   critical  CVSS 9.8   due 2026-01-12
+  TKT-0013  CVE-2023-0286    high      CVSS 7.4   due 2026-02-02
+  TKT-0014  CVE-2020-1971    medium    CVSS 5.9   due 2026-04-05
+
+You can patch now (self-service):
+  python -m cspm patch now --server fin-payroll-01
+or leave it to the next agreed downtime window (FRI 21:00 UTC, 2h). A snapshot is taken before patching and the server is rolled back if health checks fail."
+5,2026-01-05T09:00:00Z,ananya.rao@stride.example,Online Store risk is 145.6 against a goal line of 30,"Hello Ananya Rao,
+
+Your business unit's security risk is above the goal line set by leadership.
+  Risk score: 145.6 (goal line 30)
+  Open vulnerabilities: 6 (0 past deadline)
+  Unresolved configuration issues: 6
+
+Largest contributors:
+  CVE-2021-44228   on store-web-01     zero-day  due 2026-01-05
+  CVE-2024-6387    on store-web-01     high      due 2026-02-02
+  CVE-2023-44487   on store-web-01     high      due 2026-02-02
+  CVE-2023-48795   on store-web-01     medium    due 2026-04-05
+  CVE-2023-4911    on store-db-01      high      due 2026-02-02
+  DP.1             on stride-product-images config issue (found in assessment)
+  DP.2             on stride-product-images config issue (found in assessment)
+  DP.5             on store-web-01     config issue (found in assessment)
+  NET.1            on store-web-sg     config issue (found in assessment)
+  SRV.1            on store-web-01     config issue (found in assessment)
+
+Agreeing to downtime is how this comes down: the next window is SUN 01:00 UTC, or the server owner can patch now through self-service."
+6,2026-01-05T09:00:00Z,vikram.shetty@stride.example,Manufacturing risk is 39.7 against a goal line of 20,"Hello Vikram Shetty,
+
+Your business unit's security risk is above the goal line set by leadership.
+  Risk score: 39.7 (goal line 20)
+  Open vulnerabilities: 4 (0 past deadline)
+  Unresolved configuration issues: 2
+
+Largest contributors:
+  CVE-2021-3156    on mfg-erp-01       high      due 2026-02-02
+  CVE-2021-4034    on mfg-erp-01       high      due 2026-02-02
+  CVE-2022-0847    on mfg-erp-01       high      due 2026-02-02
+  CVE-2023-5678    on mfg-erp-01       medium    due 2026-04-05
+  NET.2            on mfg-erp-sg       config issue (found in assessment)
+  SRV.4            on mfg-erp-01       config issue (found in assessment)
+
+Agreeing to downtime is how this comes down: the next window is SAT 20:00 UTC, or the server owner can patch now through self-service."
+7,2026-01-05T09:00:00Z,meera.iyer@stride.example,Finance and HR risk is 70.4 against a goal line of 25,"Hello Meera Iyer,
+
+Your business unit's security risk is above the goal line set by leadership.
+  Risk score: 70.4 (goal line 25)
+  Open vulnerabilities: 4 (0 past deadline)
+  Unresolved configuration issues: 4
+
+Largest contributors:
+  CVE-2023-38408   on fin-payroll-01   critical  due 2026-01-12
+  CVE-2022-22965   on fin-payroll-01   critical  due 2026-01-12
+  CVE-2023-0286    on fin-payroll-01   high      due 2026-02-02
+  CVE-2020-1971    on fin-payroll-01   medium    due 2026-04-05
+  DP.3             on stride-finance-reports config issue (found in assessment)
+  NET.4            on fin-payroll-sg   config issue (found in assessment)
+  LOG.5            on stride-finance-reports config issue (found in assessment)
+  SRV.1            on fin-payroll-01   config issue (found in assessment)
+
+Agreeing to downtime is how this comes down: the next window is FRI 21:00 UTC, or the server owner can patch now through self-service."
+8,2026-01-05T09:00:00Z,rahul.nair@stride.example,Shared Platform (IT) risk is 55.0 against a goal line of 15,"Hello Rahul Nair,
+
+Your business unit's security risk is above the goal line set by leadership.
+  Risk score: 55.0 (goal line 15)
+  Open vulnerabilities: 0 (0 past deadline)
+  Unresolved configuration issues: 10
+
+Largest contributors:
+  IAM.1            on AWS account      config issue (found in assessment)
+  IAM.2            on AWS account      config issue (found in assessment)
+  IAM.4            on ops-admin        config issue (found in assessment)
+  IAM.5            on dev-priya        config issue (found in assessment)
+  IAM.6            on ops-admin        config issue (found in assessment)
+
+Agreeing to downtime is how this comes down: the next window is SUN 03:00 UTC, or the server owner can patch now through self-service."
+9,2026-01-05T09:30:00Z,rahul.nair@stride.example,Approval needed: IAM.1 on AWS account (TKT-0015),"Hello Rahul Nair,
+
+MFA is enabled for the root user.
+The root user has no MFA device.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0015 is waiting for you to approve the restore or accept the risk as an exception."
+10,2026-01-05T09:30:00Z,rahul.nair@stride.example,Approval needed: IAM.4 on ops-admin (TKT-0016),"Hello Rahul Nair,
+
+MFA is enabled for all IAM users with a console password.
+This user can sign in to the console without MFA.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0016 is waiting for you to approve the restore or accept the risk as an exception."
+11,2026-01-05T09:30:00Z,rahul.nair@stride.example,Approval needed: IAM.5 on dev-priya (TKT-0017),"Hello Rahul Nair,
+
+Access keys are rotated every 90 days or less.
+This user's access key is 200 days old; the limit is 90.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0017 is waiting for you to approve the restore or accept the risk as an exception."
+12,2026-01-05T09:30:00Z,rahul.nair@stride.example,Approval needed: IAM.6 on ops-admin (TKT-0018),"Hello Rahul Nair,
+
+No IAM user has a full administrator policy attached directly.
+This user has the full administrator policy attached directly.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0018 is waiting for you to approve the restore or accept the risk as an exception."
+13,2026-01-05T09:30:00Z,ananya.rao@stride.example,Approval needed: DP.5 on store-web-01 (TKT-0019),"Hello Ananya Rao,
+
+EBS volumes attached to servers are encrypted.
+The server has a disk that is not encrypted.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0019 is waiting for you to approve the restore or accept the risk as an exception."
+14,2026-01-05T09:30:00Z,rahul.nair@stride.example,Approval needed: NET.3 on default (TKT-0020),"Hello Rahul Nair,
+
+The default security group of every VPC restricts all traffic.
+The default security group still has rules.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0020 is waiting for you to approve the restore or accept the risk as an exception."
+15,2026-01-05T09:30:00Z,meera.iyer@stride.example,Approval needed: NET.4 on fin-payroll-sg (TKT-0021),"Hello Meera Iyer,
+
+No security group allows database ports (3306, 5432) from the internet.
+Anyone on the internet can reach port 3306.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0021 is waiting for you to approve the restore or accept the risk as an exception."
+16,2026-01-05T10:30:00Z,rahul.nair@stride.example,Shared Platform (IT) risk is back under the goal line (0 of 15),"Hello Rahul Nair,
+
+Your business unit's risk score is now 0, under the goal line of 15. No action is needed."
+17,2026-01-06T14:45:00Z,karthik.menon@stride.example,store-web-01 patched: 4 vulnerability ticket(s) closed,"Hello Karthik Menon,
+
+store-web-01 was patched (self-service). Steps: snapshot snap-0001; stopped nginx, storefront-api; installed 4 package update(s); health check: 2 service(s) active."
+18,2026-01-06T14:45:00Z,ananya.rao@stride.example,Online Store risk is back under the goal line (21.4 of 30),"Hello Ananya Rao,
+
+Your business unit's risk score is now 21.4, under the goal line of 30. No action is needed."
+19,2026-01-07T11:06:00Z,ananya.rao@stride.example,Approval needed: NET.4 on store-db-sg (TKT-0022),"Hello Ananya Rao,
+
+No security group allows database ports (3306, 5432) from the internet.
+Anyone on the internet can reach port 3306. Changed by dev-priya at 2026-01-07T11:04:00Z.
+
+This setting is sensitive, so it was not changed automatically. Ticket TKT-0022 is waiting for you to approve the restore or accept the risk as an exception."
+20,2026-01-07T11:06:00Z,security@stride.example,Drift detected on 5 setting(s),"Configuration drift from the MBSS:
+  DP.1   stride-finance-reports   by ops-admin      at 2026-01-07T11:01:00Z -> remediated
+  NET.1  store-web-sg             by dev-priya      at 2026-01-07T11:00:00Z -> remediated
+  NET.4  store-db-sg              by dev-priya      at 2026-01-07T11:04:00Z -> pending_approval
+  LOG.2  stride-trail             by ops-admin      at 2026-01-07T11:02:00Z -> remediated
+  SRV.1  store-db-01              by dev-priya      at 2026-01-07T11:03:00Z -> remediated"
+21,2026-01-09T21:00:00Z,security@stride.example,Finance and HR downtime window skipped (on hold),1 server(s) with open tickets were not patched. Reason given: Quarter-end payroll run; no downtime this week
+22,2026-01-10T20:45:00Z,divya.pillai@stride.example,Patching mfg-erp-01 did not succeed (rolled back),"Hello Divya Pillai,
+
+Patching mfg-erp-01 failed its post-patch checks. Steps: snapshot snap-0002; stopped erp-app, mariadb; installed 4 package update(s); health check: service erp-app failed to start after patching; restored from snap-0002.
+4 ticket(s) were reopened and will be retried in the next window."
+23,2026-01-10T20:45:00Z,security@stride.example,Patch job 2 on mfg-erp-01: rolled_back,"snapshot snap-0002; stopped erp-app, mariadb; installed 4 package update(s); health check: service erp-app failed to start after patching; restored from snap-0002"
+24,2026-01-11T01:45:00Z,karthik.menon@stride.example,store-db-01 patched: 2 vulnerability ticket(s) closed,"Hello Karthik Menon,
+
+store-db-01 was patched (scheduled). Steps: snapshot snap-0003; stopped postgresql; installed 2 package update(s); health check: 1 service(s) active."
+25,2026-01-13T09:00:00Z,vikram.shetty@stride.example,Reminder: Manufacturing risk is 28.7 against a goal line of 20,"Hello Vikram Shetty,
+
+Your business unit's security risk is above the goal line set by leadership.
+  Risk score: 28.7 (goal line 20)
+  Open vulnerabilities: 4 (0 past deadline)
+  Unresolved configuration issues: 0
+
+Largest contributors:
+  CVE-2021-3156    on mfg-erp-01       high      due 2026-02-02
+  CVE-2021-4034    on mfg-erp-01       high      due 2026-02-02
+  CVE-2022-0847    on mfg-erp-01       high      due 2026-02-02
+  CVE-2023-5678    on mfg-erp-01       medium    due 2026-04-05
+
+Agreeing to downtime is how this comes down: the next window is SAT 20:00 UTC, or the server owner can patch now through self-service."
+26,2026-01-13T09:00:00Z,meera.iyer@stride.example,Reminder: Finance and HR risk is 53.6 against a goal line of 25,"Hello Meera Iyer,
+
+Your business unit's security risk is above the goal line set by leadership.
+  Risk score: 53.6 (goal line 25)
+  Open vulnerabilities: 4 (2 past deadline)
+  Unresolved configuration issues: 0
+
+Largest contributors:
+  CVE-2023-38408   on fin-payroll-01   critical  due 2026-01-12  OVERDUE
+  CVE-2022-22965   on fin-payroll-01   critical  due 2026-01-12  OVERDUE
+  CVE-2023-0286    on fin-payroll-01   high      due 2026-02-02
+  CVE-2020-1971    on fin-payroll-01   medium    due 2026-04-05
+
+Downtime for this unit is currently on hold, so scheduled patching is not running.
+
+Agreeing to downtime is how this comes down: the next window is FRI 21:00 UTC, or the server owner can patch now through self-service."
+27,2026-01-16T21:45:00Z,suresh.kumar@stride.example,fin-payroll-01 patched: 4 vulnerability ticket(s) closed,"Hello Suresh Kumar,
+
+fin-payroll-01 was patched (scheduled). Steps: snapshot snap-0004; stopped payroll-app, mysqld; installed 4 package update(s); health check: 2 service(s) active."
+28,2026-01-17T20:45:00Z,divya.pillai@stride.example,mfg-erp-01 patched: 4 vulnerability ticket(s) closed,"Hello Divya Pillai,
+
+mfg-erp-01 was patched (scheduled). Steps: snapshot snap-0005; stopped erp-app, mariadb; installed 4 package update(s); health check: 2 service(s) active."
+29,2026-01-19T09:00:00Z,vikram.shetty@stride.example,Manufacturing risk is back under the goal line (0 of 20),"Hello Vikram Shetty,
+
+Your business unit's risk score is now 0, under the goal line of 20. No action is needed."
+30,2026-01-19T09:00:00Z,meera.iyer@stride.example,Finance and HR risk is back under the goal line (0 of 25),"Hello Meera Iyer,
+
+Your business unit's risk score is now 0, under the goal line of 25. No action is needed."

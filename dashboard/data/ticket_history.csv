@@ -1,0 +1,67 @@
+id,ticket_id,at,status,note
+1,TKT-0001,2026-01-05T09:00:00Z,open,Ticket raised automatically
+2,TKT-0002,2026-01-05T09:00:00Z,open,Ticket raised automatically
+3,TKT-0003,2026-01-05T09:00:00Z,open,Ticket raised automatically
+4,TKT-0004,2026-01-05T09:00:00Z,open,Ticket raised automatically
+5,TKT-0005,2026-01-05T09:00:00Z,open,Ticket raised automatically
+6,TKT-0006,2026-01-05T09:00:00Z,open,Ticket raised automatically
+7,TKT-0007,2026-01-05T09:00:00Z,open,Ticket raised automatically
+8,TKT-0008,2026-01-05T09:00:00Z,open,Ticket raised automatically
+9,TKT-0009,2026-01-05T09:00:00Z,open,Ticket raised automatically
+10,TKT-0010,2026-01-05T09:00:00Z,open,Ticket raised automatically
+11,TKT-0011,2026-01-05T09:00:00Z,open,Ticket raised automatically
+12,TKT-0012,2026-01-05T09:00:00Z,open,Ticket raised automatically
+13,TKT-0013,2026-01-05T09:00:00Z,open,Ticket raised automatically
+14,TKT-0014,2026-01-05T09:00:00Z,open,Ticket raised automatically
+15,TKT-0015,2026-01-05T09:30:00Z,open,Ticket raised automatically
+16,TKT-0016,2026-01-05T09:30:00Z,open,Ticket raised automatically
+17,TKT-0017,2026-01-05T09:30:00Z,open,Ticket raised automatically
+18,TKT-0018,2026-01-05T09:30:00Z,open,Ticket raised automatically
+19,TKT-0019,2026-01-05T09:30:00Z,open,Ticket raised automatically
+20,TKT-0020,2026-01-05T09:30:00Z,open,Ticket raised automatically
+21,TKT-0021,2026-01-05T09:30:00Z,open,Ticket raised automatically
+22,TKT-0015,2026-01-05T10:30:00Z,closed,Restore approved by Rahul Nair; set root_mfa to True
+23,TKT-0016,2026-01-05T10:30:00Z,closed,Restore approved by Rahul Nair; set mfa to True
+24,TKT-0017,2026-01-05T10:30:00Z,closed,Restore approved by Rahul Nair; set access_key_age_days to 0
+25,TKT-0018,2026-01-05T10:30:00Z,closed,Restore approved by Rahul Nair; set admin_policy to False
+26,TKT-0019,2026-01-05T10:30:00Z,closed,Risk accepted by Ananya Rao for 90 days: Re-encrypting the volume needs a rebuild; planned with the storefront migration
+27,TKT-0020,2026-01-05T10:30:00Z,closed,Restore approved by Rahul Nair; set ingress to []
+28,TKT-0021,2026-01-05T10:30:00Z,closed,Restore approved by Meera Iyer; revoked 1 internet ingress rule(s)
+29,TKT-0001,2026-01-06T14:00:00Z,in_progress,Patch job 1 started (self-service)
+30,TKT-0003,2026-01-06T14:00:00Z,in_progress,Patch job 1 started (self-service)
+31,TKT-0002,2026-01-06T14:00:00Z,in_progress,Patch job 1 started (self-service)
+32,TKT-0004,2026-01-06T14:00:00Z,in_progress,Patch job 1 started (self-service)
+33,TKT-0001,2026-01-06T14:45:00Z,closed,Patched by job 1; post-patch health checks passed
+34,TKT-0002,2026-01-06T14:45:00Z,closed,Patched by job 1; post-patch health checks passed
+35,TKT-0003,2026-01-06T14:45:00Z,closed,Patched by job 1; post-patch health checks passed
+36,TKT-0004,2026-01-06T14:45:00Z,closed,Patched by job 1; post-patch health checks passed
+37,TKT-0022,2026-01-07T11:06:00Z,open,Ticket raised automatically
+38,TKT-0022,2026-01-07T11:45:00Z,closed,Restore approved by Ananya Rao; revoked 1 internet ingress rule(s)
+39,TKT-0007,2026-01-10T20:00:00Z,in_progress,Patch job 2 started (scheduled)
+40,TKT-0008,2026-01-10T20:00:00Z,in_progress,Patch job 2 started (scheduled)
+41,TKT-0009,2026-01-10T20:00:00Z,in_progress,Patch job 2 started (scheduled)
+42,TKT-0010,2026-01-10T20:00:00Z,in_progress,Patch job 2 started (scheduled)
+43,TKT-0007,2026-01-10T20:45:00Z,reopened,Patch job 2 rolled back: service erp-app failed to start after patching
+44,TKT-0008,2026-01-10T20:45:00Z,reopened,Patch job 2 rolled back: service erp-app failed to start after patching
+45,TKT-0009,2026-01-10T20:45:00Z,reopened,Patch job 2 rolled back: service erp-app failed to start after patching
+46,TKT-0010,2026-01-10T20:45:00Z,reopened,Patch job 2 rolled back: service erp-app failed to start after patching
+47,TKT-0005,2026-01-11T01:00:00Z,in_progress,Patch job 3 started (scheduled)
+48,TKT-0006,2026-01-11T01:00:00Z,in_progress,Patch job 3 started (scheduled)
+49,TKT-0005,2026-01-11T01:45:00Z,closed,Patched by job 3; post-patch health checks passed
+50,TKT-0006,2026-01-11T01:45:00Z,closed,Patched by job 3; post-patch health checks passed
+51,TKT-0011,2026-01-16T21:00:00Z,in_progress,Patch job 4 started (scheduled)
+52,TKT-0012,2026-01-16T21:00:00Z,in_progress,Patch job 4 started (scheduled)
+53,TKT-0013,2026-01-16T21:00:00Z,in_progress,Patch job 4 started (scheduled)
+54,TKT-0014,2026-01-16T21:00:00Z,in_progress,Patch job 4 started (scheduled)
+55,TKT-0011,2026-01-16T21:45:00Z,closed,Patched by job 4; post-patch health checks passed
+56,TKT-0012,2026-01-16T21:45:00Z,closed,Patched by job 4; post-patch health checks passed
+57,TKT-0013,2026-01-16T21:45:00Z,closed,Patched by job 4; post-patch health checks passed
+58,TKT-0014,2026-01-16T21:45:00Z,closed,Patched by job 4; post-patch health checks passed
+59,TKT-0007,2026-01-17T20:00:00Z,in_progress,Patch job 5 started (scheduled)
+60,TKT-0008,2026-01-17T20:00:00Z,in_progress,Patch job 5 started (scheduled)
+61,TKT-0009,2026-01-17T20:00:00Z,in_progress,Patch job 5 started (scheduled)
+62,TKT-0010,2026-01-17T20:00:00Z,in_progress,Patch job 5 started (scheduled)
+63,TKT-0007,2026-01-17T20:45:00Z,closed,Patched by job 5; post-patch health checks passed
+64,TKT-0008,2026-01-17T20:45:00Z,closed,Patched by job 5; post-patch health checks passed
+65,TKT-0009,2026-01-17T20:45:00Z,closed,Patched by job 5; post-patch health checks passed
+66,TKT-0010,2026-01-17T20:45:00Z,closed,Patched by job 5; post-patch health checks passed

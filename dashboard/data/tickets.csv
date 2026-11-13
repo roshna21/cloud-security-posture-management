@@ -1,0 +1,61 @@
+id,type,title,description,bu,assignee,assignee_email,severity,resource_id,ref_id,status,created_at,due_at,updated_at,closed_at,reopen_count
+TKT-0001,vulnerability,"CVE-2021-44228 on store-web-01 (zero-day, CVSS 10.0)","Apache Log4j2 JNDI lookup remote code execution (Log4Shell).
+Package log4j-core 2.14.1 -> fixed in 2.17.1.",online-store,Karthik Menon,karthik.menon@stride.example,zero-day,i-0a1b2c3d4e5f60001,1,closed,2026-01-05T09:00:00Z,2026-01-05T09:00:00Z,2026-01-06T14:45:00Z,2026-01-06T14:45:00Z,0
+TKT-0002,vulnerability,"CVE-2023-44487 on store-web-01 (high, CVSS 7.5)","HTTP/2 Rapid Reset denial of service.
+Package nginx 1.20.0 -> fixed in 1.25.3.",online-store,Karthik Menon,karthik.menon@stride.example,high,i-0a1b2c3d4e5f60001,2,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-06T14:45:00Z,2026-01-06T14:45:00Z,0
+TKT-0003,vulnerability,"CVE-2024-6387 on store-web-01 (high, CVSS 8.1)","OpenSSH sshd signal handler race condition allowing remote code execution (regreSSHion).
+Package openssh 8.7p1 -> fixed in 9.8p1.",online-store,Karthik Menon,karthik.menon@stride.example,high,i-0a1b2c3d4e5f60001,3,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-06T14:45:00Z,2026-01-06T14:45:00Z,0
+TKT-0004,vulnerability,"CVE-2023-48795 on store-web-01 (medium, CVSS 5.9)","SSH transport protocol prefix truncation (Terrapin).
+Package openssh 8.7p1 -> fixed in 9.6p1.",online-store,Karthik Menon,karthik.menon@stride.example,medium,i-0a1b2c3d4e5f60001,4,closed,2026-01-05T09:00:00Z,2026-04-05T09:00:00Z,2026-01-06T14:45:00Z,2026-01-06T14:45:00Z,0
+TKT-0005,vulnerability,"CVE-2023-4911 on store-db-01 (high, CVSS 7.8)","glibc ld.so GLIBC_TUNABLES buffer overflow giving local privilege escalation (Looney Tunables).
+Package glibc 2.34-60 -> fixed in 2.34-83.",online-store,Karthik Menon,karthik.menon@stride.example,high,i-0a1b2c3d4e5f60002,5,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-11T01:45:00Z,2026-01-11T01:45:00Z,0
+TKT-0006,vulnerability,"CVE-2023-2650 on store-db-01 (medium, CVSS 6.5)","OpenSSL denial of service when processing ASN.1 object identifiers.
+Package openssl 3.0.7 -> fixed in 3.0.9.",online-store,Karthik Menon,karthik.menon@stride.example,medium,i-0a1b2c3d4e5f60002,6,closed,2026-01-05T09:00:00Z,2026-04-05T09:00:00Z,2026-01-11T01:45:00Z,2026-01-11T01:45:00Z,0
+TKT-0007,vulnerability,"CVE-2021-3156 on mfg-erp-01 (high, CVSS 7.8)","sudo heap overflow giving local privilege escalation (Baron Samedit).
+Package sudo 1.8.23 -> fixed in 1.9.5p2.",manufacturing,Divya Pillai,divya.pillai@stride.example,high,i-0a1b2c3d4e5f60003,7,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-17T20:45:00Z,2026-01-17T20:45:00Z,1
+TKT-0008,vulnerability,"CVE-2021-4034 on mfg-erp-01 (high, CVSS 7.8)","polkit pkexec local privilege escalation (PwnKit).
+Package polkit 0.112 -> fixed in 0.120.",manufacturing,Divya Pillai,divya.pillai@stride.example,high,i-0a1b2c3d4e5f60003,8,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-17T20:45:00Z,2026-01-17T20:45:00Z,1
+TKT-0009,vulnerability,"CVE-2022-0847 on mfg-erp-01 (high, CVSS 7.8)","Linux kernel pipe buffer flaw allowing overwrite of read-only files (Dirty Pipe).
+Package kernel 5.10.90 -> fixed in 5.10.102.",manufacturing,Divya Pillai,divya.pillai@stride.example,high,i-0a1b2c3d4e5f60003,9,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-17T20:45:00Z,2026-01-17T20:45:00Z,1
+TKT-0010,vulnerability,"CVE-2023-5678 on mfg-erp-01 (medium, CVSS 5.3)","OpenSSL excessive time generating or checking long X9.42 DH keys.
+Package openssl 1.0.2k -> fixed in 1.0.2zj.",manufacturing,Divya Pillai,divya.pillai@stride.example,medium,i-0a1b2c3d4e5f60003,10,closed,2026-01-05T09:00:00Z,2026-04-05T09:00:00Z,2026-01-17T20:45:00Z,2026-01-17T20:45:00Z,1
+TKT-0011,vulnerability,"CVE-2023-38408 on fin-payroll-01 (critical, CVSS 9.8)","OpenSSH ssh-agent PKCS#11 remote code execution through a forwarded agent.
+Package openssh 7.4p1 -> fixed in 9.3p2.",finance-hr,Suresh Kumar,suresh.kumar@stride.example,critical,i-0a1b2c3d4e5f60004,11,closed,2026-01-05T09:00:00Z,2026-01-12T09:00:00Z,2026-01-16T21:45:00Z,2026-01-16T21:45:00Z,0
+TKT-0012,vulnerability,"CVE-2022-22965 on fin-payroll-01 (critical, CVSS 9.8)","Spring Framework data binding remote code execution (Spring4Shell).
+Package spring-webmvc 5.3.15 -> fixed in 5.3.18.",finance-hr,Suresh Kumar,suresh.kumar@stride.example,critical,i-0a1b2c3d4e5f60004,12,closed,2026-01-05T09:00:00Z,2026-01-12T09:00:00Z,2026-01-16T21:45:00Z,2026-01-16T21:45:00Z,0
+TKT-0013,vulnerability,"CVE-2023-0286 on fin-payroll-01 (high, CVSS 7.4)","OpenSSL X.400 address type confusion in X.509 GeneralName.
+Package openssl 1.1.1k -> fixed in 1.1.1t.",finance-hr,Suresh Kumar,suresh.kumar@stride.example,high,i-0a1b2c3d4e5f60004,13,closed,2026-01-05T09:00:00Z,2026-02-02T09:00:00Z,2026-01-16T21:45:00Z,2026-01-16T21:45:00Z,0
+TKT-0014,vulnerability,"CVE-2020-1971 on fin-payroll-01 (medium, CVSS 5.9)","OpenSSL EDIPartyName NULL pointer dereference.
+Package openssl 1.1.1g -> fixed in 1.1.1i.",finance-hr,Suresh Kumar,suresh.kumar@stride.example,medium,i-0a1b2c3d4e5f60004,14,closed,2026-01-05T09:00:00Z,2026-04-05T09:00:00Z,2026-01-16T21:45:00Z,2026-01-16T21:45:00Z,0
+TKT-0015,config_approval,Baseline gap: IAM.1 on AWS account needs approval,"MFA is enabled for the root user (CIS AWS 1.5). The root user has no MFA device.
+Recommended fix: Sign in as root and register an MFA device. This cannot be automated.
+Approve the restore:  python -m cspm drift decide TKT-0015 restore
+Or accept the risk:   python -m cspm drift decide TKT-0015 accept --reason ""...""",platform,Rahul Nair,rahul.nair@stride.example,critical,account,1,closed,2026-01-05T09:30:00Z,2026-01-12T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0016,config_approval,Baseline gap: IAM.4 on ops-admin needs approval,"MFA is enabled for all IAM users with a console password (CIS AWS 1.10). This user can sign in to the console without MFA.
+Recommended fix: Have the user register an MFA device, or remove their console password.
+Approve the restore:  python -m cspm drift decide TKT-0016 restore
+Or accept the risk:   python -m cspm drift decide TKT-0016 accept --reason ""...""",platform,Rahul Nair,rahul.nair@stride.example,high,ops-admin,3,closed,2026-01-05T09:30:00Z,2026-02-02T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0017,config_approval,Baseline gap: IAM.5 on dev-priya needs approval,"Access keys are rotated every 90 days or less (CIS AWS 1.14). This user's access key is 200 days old; the limit is 90.
+Recommended fix: Create a new access key, update the applications that use it, then deactivate the old key.
+Approve the restore:  python -m cspm drift decide TKT-0017 restore
+Or accept the risk:   python -m cspm drift decide TKT-0017 accept --reason ""...""",platform,Rahul Nair,rahul.nair@stride.example,medium,dev-priya,4,closed,2026-01-05T09:30:00Z,2026-04-05T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0018,config_approval,Baseline gap: IAM.6 on ops-admin needs approval,"No IAM user has a full administrator policy attached directly (CIS AWS 1.16). This user has the full administrator policy attached directly.
+Recommended fix: Detach AdministratorAccess and grant only the permissions the user needs, through a group or role.
+Approve the restore:  python -m cspm drift decide TKT-0018 restore
+Or accept the risk:   python -m cspm drift decide TKT-0018 accept --reason ""...""",platform,Rahul Nair,rahul.nair@stride.example,high,ops-admin,5,closed,2026-01-05T09:30:00Z,2026-02-02T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0019,config_approval,Baseline gap: DP.5 on store-web-01 needs approval,"EBS volumes attached to servers are encrypted (CIS AWS 2.2.1 (existing volumes)). The server has a disk that is not encrypted.
+Recommended fix: Snapshot the volume, copy the snapshot with encryption, and replace the volume in a downtime window.
+Approve the restore:  python -m cspm drift decide TKT-0019 restore
+Or accept the risk:   python -m cspm drift decide TKT-0019 accept --reason ""...""",online-store,Ananya Rao,ananya.rao@stride.example,high,i-0a1b2c3d4e5f60001,10,closed,2026-01-05T09:30:00Z,2026-02-02T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0020,config_approval,Baseline gap: NET.3 on default needs approval,"The default security group of every VPC restricts all traffic (CIS AWS 5.4). The default security group still has rules.
+Recommended fix: Remove all rules from the default security group and move resources to purpose-built groups.
+Approve the restore:  python -m cspm drift decide TKT-0020 restore
+Or accept the risk:   python -m cspm drift decide TKT-0020 accept --reason ""...""",platform,Rahul Nair,rahul.nair@stride.example,medium,sg-default-0005,13,closed,2026-01-05T09:30:00Z,2026-04-05T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0021,config_approval,Baseline gap: NET.4 on fin-payroll-sg needs approval,"No security group allows database ports (3306, 5432) from the internet (CIS AWS 5.2 (database ports)). Anyone on the internet can reach port 3306.
+Recommended fix: Remove the 0.0.0.0/0 rule and allow the database port only from the application tier.
+Approve the restore:  python -m cspm drift decide TKT-0021 restore
+Or accept the risk:   python -m cspm drift decide TKT-0021 accept --reason ""...""",finance-hr,Meera Iyer,meera.iyer@stride.example,critical,sg-fin-0004,14,closed,2026-01-05T09:30:00Z,2026-01-12T09:30:00Z,2026-01-05T10:30:00Z,2026-01-05T10:30:00Z,0
+TKT-0022,config_approval,Drift: NET.4 on store-db-sg needs approval,"No security group allows database ports (3306, 5432) from the internet (CIS AWS 5.2 (database ports)). Anyone on the internet can reach port 3306. Changed by dev-priya at 2026-01-07T11:04:00Z.
+Recommended fix: Remove the 0.0.0.0/0 rule and allow the database port only from the application tier.
+Approve the restore:  python -m cspm drift decide TKT-0022 restore
+Or accept the risk:   python -m cspm drift decide TKT-0022 accept --reason ""...""",online-store,Ananya Rao,ananya.rao@stride.example,critical,sg-db-0002,25,closed,2026-01-07T11:06:00Z,2026-01-14T11:06:00Z,2026-01-07T11:45:00Z,2026-01-07T11:45:00Z,0

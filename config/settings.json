@@ -1,0 +1,51 @@
+{
+  "provider": "mock",
+  "aws": {
+    "region": "ap-southeast-2",
+    "sns_topic_arn": "",
+    "drift_queue_url": "",
+    "project_tag": "cspm-demo",
+    "max_cves_per_server": 25,
+    "log_bucket": ""
+  },
+  "sla_days": {
+    "zero-day": 0,
+    "critical": 7,
+    "high": 28,
+    "medium": 90,
+    "low": 180
+  },
+  "actively_exploited_cves": [
+    "CVE-2021-44228"
+  ],
+  "risk": {
+    "exposure_factor": {
+      "internet": 1.5,
+      "internal": 1.0
+    },
+    "criticality_factor": {
+      "high": 1.5,
+      "medium": 1.0,
+      "low": 0.75
+    },
+    "exploited_factor": 1.5,
+    "overdue_cap": 2.0,
+    "overdue_floor_days": 7,
+    "config_severity_points": {
+      "critical": 10,
+      "high": 7,
+      "medium": 4,
+      "low": 2
+    },
+    "alert_reminder_days": 7
+  },
+  "patching": {
+    "minutes_per_server": 45
+  },
+  "exceptions": {
+    "default_expiry_days": 90
+  },
+  "nvd": {
+    "api_url": "https://services.nvd.nist.gov/rest/json/cves/2.0"
+  }
+}

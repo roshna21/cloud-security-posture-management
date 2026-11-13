@@ -1,0 +1,3 @@
+# The core engine and the local simulation use only the Python standard library (3.9+).
+# boto3 is needed only for the AWS provider.
+boto3>=1.34

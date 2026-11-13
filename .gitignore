@@ -1,0 +1,12 @@
+state/
+__pycache__/
+*.pyc
+terraform/.terraform/
+terraform/.build/
+terraform/*.tfstate*
+terraform/*.tfvars
+.venv/
+state-aws/
+terraform/*.log
+.claude/
+.DS_Store

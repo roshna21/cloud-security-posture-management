@@ -1,0 +1,254 @@
+{
+  "CVE-2021-44228": {
+    "cvss": 10.0,
+    "description": "Apache Log4j2 JNDI lookup remote code execution (Log4Shell)."
+  },
+  "CVE-2023-44487": {
+    "cvss": 7.5,
+    "description": "HTTP/2 Rapid Reset denial of service."
+  },
+  "CVE-2024-6387": {
+    "cvss": 8.1,
+    "description": "OpenSSH sshd signal handler race condition allowing remote code execution (regreSSHion)."
+  },
+  "CVE-2023-48795": {
+    "cvss": 5.9,
+    "description": "SSH transport protocol prefix truncation (Terrapin)."
+  },
+  "CVE-2023-4911": {
+    "cvss": 7.8,
+    "description": "glibc ld.so GLIBC_TUNABLES buffer overflow giving local privilege escalation (Looney Tunables)."
+  },
+  "CVE-2023-2650": {
+    "cvss": 6.5,
+    "description": "OpenSSL denial of service when processing ASN.1 object identifiers."
+  },
+  "CVE-2021-3156": {
+    "cvss": 7.8,
+    "description": "sudo heap overflow giving local privilege escalation (Baron Samedit)."
+  },
+  "CVE-2021-4034": {
+    "cvss": 7.8,
+    "description": "polkit pkexec local privilege escalation (PwnKit)."
+  },
+  "CVE-2022-0847": {
+    "cvss": 7.8,
+    "description": "Linux kernel pipe buffer flaw allowing overwrite of read-only files (Dirty Pipe)."
+  },
+  "CVE-2023-5678": {
+    "cvss": 5.3,
+    "description": "OpenSSL excessive time generating or checking long X9.42 DH keys."
+  },
+  "CVE-2023-38408": {
+    "cvss": 9.8,
+    "description": "OpenSSH ssh-agent PKCS#11 remote code execution through a forwarded agent."
+  },
+  "CVE-2022-22965": {
+    "cvss": 9.8,
+    "description": "Spring Framework data binding remote code execution (Spring4Shell)."
+  },
+  "CVE-2023-0286": {
+    "cvss": 7.4,
+    "description": "OpenSSL X.400 address type confusion in X.509 GeneralName."
+  },
+  "CVE-2020-1971": {
+    "cvss": 5.9,
+    "description": "OpenSSL EDIPartyName NULL pointer dereference."
+  },
+  "CVE-2014-1932": {
+    "cvss": 4.4,
+    "description": "The (1) load_djpeg function in JpegImagePlugin.py, (2) Ghostscript function in EpsImagePlugin.py, (3) load function in IptcImagePlugin.py, and (4) _copy function in Image.py in Python Image Library (PIL) 1.1.7 and earlier and Pillow before 2.3.1 do not properly create temporary files, which allow local users to overwrite arbitrary files and obtain sensitive information via a symlink attack on the temporary file.",
+    "published": "2014-04-17T14:55:11.090",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2014-1933": {
+    "cvss": 2.1,
+    "description": "The (1) JpegImagePlugin.py and (2) EpsImagePlugin.py scripts in Python Image Library (PIL) 1.1.7 and earlier and Pillow before 2.3.1 uses the names of temporary files on the command line, which makes it easier for local users to conduct symlink attacks by listing the processes.",
+    "published": "2014-04-17T14:55:11.120",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2014-3007": {
+    "cvss": 10.0,
+    "description": "Python Image Library (PIL) 1.1.7 and earlier and Pillow 2.3 might allow remote attackers to execute arbitrary commands via shell metacharacters in unspecified vectors related to CVE-2014-1932, possibly JpegImagePlugin.py.",
+    "published": "2014-04-27T20:55:23.697",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2014-9601": {
+    "cvss": 5.0,
+    "description": "Pillow before 2.7.0 allows remote attackers to cause a denial of service via a compressed text chunk in a PNG image that has a large size when it is decompressed.",
+    "published": "2015-01-16T16:59:17.123",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2015-1197": {
+    "cvss": 1.9,
+    "description": "cpio 2.11, when using the --no-absolute-filenames option, allows local users to write to arbitrary files via a symlink attack on a file in an archive.",
+    "published": "2015-02-19T15:59:12.377",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2015-8540": {
+    "cvss": 8.8,
+    "description": "Integer underflow in the png_check_keyword function in pngwutil.c in libpng 0.90 through 0.99, 1.0.x before 1.0.66, 1.1.x and 1.2.x before 1.2.56, 1.3.x and 1.4.x before 1.4.19, and 1.5.x before 1.5.26 allows remote attackers to have unspecified impact via a space character as a keyword in a PNG image, which triggers an out-of-bounds read.",
+    "published": "2016-04-14T14:59:03.287",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2016-9190": {
+    "cvss": 7.8,
+    "description": "Pillow before 3.3.2 allows context-dependent attackers to execute arbitrary code by using the \"crafted image file\" approach, related to an \"Insecure Sign Extension\" issue affecting the ImagingNew in Storage.c component.",
+    "published": "2016-11-04T10:59:10.803",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2017-10140": {
+    "cvss": 7.8,
+    "description": "Postfix before 2.11.10, 3.0.x before 3.0.10, 3.1.x before 3.1.6, and 3.2.x before 3.2.2 might allow local users to gain privileges by leveraging undocumented functionality in Berkeley DB 2.x and later, related to reading settings from DB_CONFIG in the current directory.",
+    "published": "2018-04-16T17:29:00.220",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2018-16428": {
+    "cvss": 9.8,
+    "description": "In GNOME GLib 2.56.1, g_markup_parse_context_end_parse() in gmarkup.c has a NULL pointer dereference.",
+    "published": "2018-09-04T00:29:01.557",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2018-16429": {
+    "cvss": 7.5,
+    "description": "GNOME GLib 2.56.1 has an out-of-bounds read vulnerability in g_markup_parse_context_parse() in gmarkup.c, related to utf8_str().",
+    "published": "2018-09-04T00:29:01.697",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2019-13565": {
+    "cvss": 7.5,
+    "description": "An issue was discovered in OpenLDAP 2.x before 2.4.48. When using SASL authentication and session encryption, and relying on the SASL security layers in slapd access controls, it is possible to obtain access that would otherwise be denied via a simple bind for any identity covered in those ACLs. After the first SASL bind is completed, the sasl_ssf value is retained for all new non-SASL connections. Depending on the ACL configuration, this can affect different types of operations (searches, modifications, etc.). In other words, a successful authorization step completed by one user affects the authorization requirement for a different user.",
+    "published": "2019-07-26T13:15:12.720",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-17541": {
+    "cvss": 8.8,
+    "description": "Libjpeg-turbo all version have a stack-based buffer overflow in the \"transform\" component. A remote attacker can send a malformed jpeg file to the service and cause arbitrary code execution or denial of service of the target service.",
+    "published": "2021-06-01T15:15:07.417",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-22218": {
+    "cvss": 7.5,
+    "description": "An issue was discovered in function _libssh2_packet_add in libssh2 1.10.0 allows attackers to access out of bounds memory.",
+    "published": "2023-08-22T19:16:19.120",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-35457": {
+    "cvss": 7.8,
+    "description": "GNOME GLib before 2.65.3 has an integer overflow, that might lead to an out-of-bounds write, in g_option_group_add_entries. NOTE: the vendor's position is \"Realistically this is not a security issue. The standard pattern is for callers to provide a static list of option entries in a fixed number of calls to g_option_group_add_entries().\" The researcher states that this pattern is undocumented",
+    "published": "2020-12-14T23:15:12.173",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-35653": {
+    "cvss": 7.1,
+    "description": "In Pillow before 8.1.0, PcxDecode has a buffer over-read when decoding a crafted PCX file because the user-supplied stride value is trusted for buffer calculations.",
+    "published": "2021-01-12T09:15:13.870",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36221": {
+    "cvss": 7.5,
+    "description": "An integer underflow was discovered in OpenLDAP before 2.4.57 leading to slapd crashes in the Certificate Exact Assertion processing, resulting in denial of service (schema_init.c serialNumberAndIssuerCheck).",
+    "published": "2021-01-26T18:15:56.693",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36222": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in OpenLDAP before 2.4.57 leading to an assertion failure in slapd in the saslAuthzTo validation, resulting in denial of service.",
+    "published": "2021-01-26T18:15:56.770",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36223": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in OpenLDAP before 2.4.57 leading to a slapd crash in the Values Return Filter control handling, resulting in denial of service (double free and out-of-bounds read).",
+    "published": "2021-01-26T18:15:56.867",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36224": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in OpenLDAP before 2.4.57 leading to an invalid pointer free and slapd crash in the saslAuthzTo processing, resulting in denial of service.",
+    "published": "2021-01-26T18:15:56.973",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36226": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in OpenLDAP before 2.4.57 leading to a memch->bv_len miscalculation and slapd crash in the saslAuthzTo processing, resulting in denial of service.",
+    "published": "2021-01-26T18:15:57.100",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36227": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in OpenLDAP before 2.4.57 leading to an infinite loop in slapd with the cancel_extop Cancel operation, resulting in denial of service.",
+    "published": "2021-01-26T18:15:57.160",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36228": {
+    "cvss": 7.5,
+    "description": "An integer underflow was discovered in OpenLDAP before 2.4.57 leading to a slapd crash in the Certificate List Exact Assertion processing, resulting in denial of service.",
+    "published": "2021-01-26T18:15:57.223",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36229": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in ldap_X509dn2bv in OpenLDAP before 2.4.57 leading to a slapd crash in the X.509 DN parsing in ad_keystring, resulting in denial of service.",
+    "published": "2021-01-26T18:15:57.287",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2020-36230": {
+    "cvss": 7.5,
+    "description": "A flaw was discovered in OpenLDAP before 2.4.57 leading in an assertion failure in slapd in the X.509 DN parsing in decode.c ber_next_element, resulting in denial of service.",
+    "published": "2021-01-26T18:15:57.350",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2026-42505": {
+    "cvss": 5.3,
+    "description": "Handshakes which used Encrypted Client Hello could be de-anonymized by a passive network observer due to a disclosure of pre-shared key identities in the unencrypted client hello.",
+    "published": "2026-07-08T17:17:21.497",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2026-71556": {
+    "cvss": 7.1,
+    "description": "go-git is an extensible git implementation library written in pure Go. Prior to 5.19.2 and 6.0.0-alpha.5, worktree operations (including checkout, status, and add) resolve symbolic links inside the working tree without confining resolution to the worktree boundary, so a maliciously crafted repository containing a symlink can cause go-git to read from or write to files outside the intended working directory when the repository is cloned and its worktree operations are used. Versions 5.19.2 and 6.0.0-alpha.5.",
+    "published": "2026-08-07T17:17:10.150",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2026-71557": {
+    "cvss": 6.3,
+    "description": "go-git is an extensible git implementation library written in pure Go. Prior to 5.19.2 and 6.0.0-alpha.5, reference names are not sanitized before being used to construct on-disk paths under the reference storage directory, so a maliciously crafted reference name (for example containing directory-traversal sequences) can cause go-git to write files outside the intended reference storage directory. Versions 5.19.2 and 6.0.0-alpha.5 fix the issue.",
+    "published": "2026-08-07T17:17:10.833",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  },
+  "CVE-2026-89049": {
+    "cvss": 9.9,
+    "description": "A server-side request forgery issue due to improper validation of equivalent address representations in the port forwarding to remote hosts functionality in Amazon AWS Systems Manager Agent (SSM Agent) before 3.3.4851.0 on all platforms might allow an authenticated remote user to bypass the remote destination denylist and reach link-local endpoints, potentially obtaining the temporary IAM role credentials of a managed instance and acting with that role's permissions from outside the instance, via a crafted destination host value that uses an alternate representation of a denied link-local address.\n\n\n\nTo remediate this issue, users should upgrade to version 3.3.4851.0 or later.",
+    "published": "2026-09-10T19:17:42.373",
+    "cisa_kev": false,
+    "source": "nvd-api"
+  }
+}

@@ -1,0 +1,29 @@
+id,at,label,bu,bu_name,score,goal_line,vuln_score,config_score,open_vulns,overdue_vulns,open_config
+1,2026-01-05T09:00:00Z,Initial assessment,online-store,Online Store,145.6,30.0,103.6,42.0,6,0,6
+2,2026-01-05T09:00:00Z,Initial assessment,manufacturing,Manufacturing,39.7,20.0,28.7,11.0,4,0,2
+3,2026-01-05T09:00:00Z,Initial assessment,finance-hr,Finance and HR,70.4,25.0,49.4,21.0,4,0,4
+4,2026-01-05T09:00:00Z,Initial assessment,platform,Shared Platform (IT),55.0,15.0,0.0,55.0,0,0,10
+5,2026-01-05T10:30:00Z,MBSS implemented,online-store,Online Store,103.9,30.0,103.9,0.0,6,1,0
+6,2026-01-05T10:30:00Z,MBSS implemented,manufacturing,Manufacturing,28.7,20.0,28.7,0.0,4,0,0
+7,2026-01-05T10:30:00Z,MBSS implemented,finance-hr,Finance and HR,49.4,25.0,49.4,0.0,4,0,0
+8,2026-01-05T10:30:00Z,MBSS implemented,platform,Shared Platform (IT),0.0,15.0,0.0,0.0,0,0,0
+9,2026-01-06T14:45:00Z,Self-service patch,online-store,Online Store,21.4,30.0,21.4,0.0,2,0,0
+10,2026-01-06T14:45:00Z,Self-service patch,manufacturing,Manufacturing,28.7,20.0,28.7,0.0,4,0,0
+11,2026-01-06T14:45:00Z,Self-service patch,finance-hr,Finance and HR,49.4,25.0,49.4,0.0,4,0,0
+12,2026-01-06T14:45:00Z,Self-service patch,platform,Shared Platform (IT),0.0,15.0,0.0,0.0,0,0,0
+13,2026-01-07T11:45:00Z,Drift handled,online-store,Online Store,21.4,30.0,21.4,0.0,2,0,0
+14,2026-01-07T11:45:00Z,Drift handled,manufacturing,Manufacturing,28.7,20.0,28.7,0.0,4,0,0
+15,2026-01-07T11:45:00Z,Drift handled,finance-hr,Finance and HR,49.4,25.0,49.4,0.0,4,0,0
+16,2026-01-07T11:45:00Z,Drift handled,platform,Shared Platform (IT),0.0,15.0,0.0,0.0,0,0,0
+17,2026-01-11T01:45:00Z,After week 1 windows,online-store,Online Store,0.0,30.0,0.0,0.0,0,0,0
+18,2026-01-11T01:45:00Z,After week 1 windows,manufacturing,Manufacturing,28.7,20.0,28.7,0.0,4,0,0
+19,2026-01-11T01:45:00Z,After week 1 windows,finance-hr,Finance and HR,49.4,25.0,49.4,0.0,4,0,0
+20,2026-01-11T01:45:00Z,After week 1 windows,platform,Shared Platform (IT),0.0,15.0,0.0,0.0,0,0,0
+21,2026-01-13T09:00:00Z,Finance past deadline,online-store,Online Store,0.0,30.0,0.0,0.0,0,0,0
+22,2026-01-13T09:00:00Z,Finance past deadline,manufacturing,Manufacturing,28.7,20.0,28.7,0.0,4,0,0
+23,2026-01-13T09:00:00Z,Finance past deadline,finance-hr,Finance and HR,53.6,25.0,53.6,0.0,4,2,0
+24,2026-01-13T09:00:00Z,Finance past deadline,platform,Shared Platform (IT),0.0,15.0,0.0,0.0,0,0,0
+25,2026-01-19T09:00:00Z,Final,online-store,Online Store,0.0,30.0,0.0,0.0,0,0,0
+26,2026-01-19T09:00:00Z,Final,manufacturing,Manufacturing,0.0,20.0,0.0,0.0,0,0,0
+27,2026-01-19T09:00:00Z,Final,finance-hr,Finance and HR,0.0,25.0,0.0,0.0,0,0,0
+28,2026-01-19T09:00:00Z,Final,platform,Shared Platform (IT),0.0,15.0,0.0,0.0,0,0,0

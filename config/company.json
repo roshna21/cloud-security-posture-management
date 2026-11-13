@@ -1,0 +1,43 @@
+{
+  "company": "Stride Sports Goods Pvt Ltd",
+  "security_team_email": "security@stride.example",
+  "timezone_note": "All downtime windows are expressed in UTC.",
+  "goal_line_note": "goal_line is used in simulation. goal_line_live is used on a real account: about 40 risk points per server, multiplied by its exposure and criticality factors (Online Store 40 x (2.25 + 1.5), Manufacturing 40 x 1.0, Finance and HR 40 x 1.5).",
+  "business_units": [
+    {
+      "id": "online-store",
+      "name": "Online Store",
+      "head": "Ananya Rao",
+      "head_email": "ananya.rao@stride.example",
+      "goal_line": 30,
+      "goal_line_live": 150,
+      "downtime_window": {"weekday": "SUN", "start_hour": 1, "duration_hours": 2}
+    },
+    {
+      "id": "manufacturing",
+      "name": "Manufacturing",
+      "head": "Vikram Shetty",
+      "head_email": "vikram.shetty@stride.example",
+      "goal_line": 20,
+      "goal_line_live": 40,
+      "downtime_window": {"weekday": "SAT", "start_hour": 20, "duration_hours": 3}
+    },
+    {
+      "id": "finance-hr",
+      "name": "Finance and HR",
+      "head": "Meera Iyer",
+      "head_email": "meera.iyer@stride.example",
+      "goal_line": 25,
+      "goal_line_live": 60,
+      "downtime_window": {"weekday": "FRI", "start_hour": 21, "duration_hours": 2}
+    },
+    {
+      "id": "platform",
+      "name": "Shared Platform (IT)",
+      "head": "Rahul Nair",
+      "head_email": "rahul.nair@stride.example",
+      "goal_line": 15,
+      "downtime_window": {"weekday": "SUN", "start_hour": 3, "duration_hours": 2}
+    }
+  ]
+}
