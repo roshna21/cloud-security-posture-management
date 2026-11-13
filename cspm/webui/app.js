@@ -362,7 +362,7 @@ function pagePatching() {
     <div class="tw"><table><thead><tr><th>Job</th><th>Server</th><th>How</th><th>Started</th><th>Result</th><th>Steps</th></tr></thead><tbody>
     ${S.jobs.map(j => `<tr><td class="mono">#${j.id}</td><td class="nw"><b>${esc(j.server_name)}</b><div class="s">${esc(buName(j.bu))}</div></td><td class="nw">${j.mode === 'scheduled' ? 'Scheduled window' : 'Self-service'}</td><td class="nw">${ftime(j.started_at)}</td>
       <td class="nw">${chip(j.status === 'success' ? `${j.fixed_count} tickets closed` : j.status.replace('_', ' '), j.status === 'success' ? 'ok' : 'bad')}</td>
-      <td><div class="jsteps">${(j.detail || '').split('; ').map(s => `<span class="${/failed|error|restored/i.test(s) ? 'bad' : ''}">${esc(s)}</span>`).join('')}</div></td></tr>`).join('') || '<tr><td colspan="6" class="empty">No patch jobs yet.</td></tr>'}
+      <td><div class="jsteps">${(j.detail || '').split('; ').map(s => `<span class="${/services: failed|failed to start|error|restored|ROLLBACK/i.test(s) ? 'bad' : ''}">${esc(s)}</span>`).join('')}</div></td></tr>`).join('') || '<tr><td colspan="6" class="empty">No patch jobs yet.</td></tr>'}
     </tbody></table></div></div>`;
 }
 
