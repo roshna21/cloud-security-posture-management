@@ -15,6 +15,31 @@ built on native cloud services and about 3,500 lines of Python.
 | `aws` | A real AWS account built by `terraform/` | Run end to end on a live account in November 2026 |
 | `recorded` | The saved data of a past live run | Read-only view, no credentials needed |
 
+## Screenshots
+
+The web console, running the simulated company part-way through its story. One business
+unit has declined downtime, so its deadlines have passed and its risk is above the goal line.
+
+**Overview**: progress through the six stages, a posture grade with the most urgent actions,
+and each business unit's risk against its goal line.
+
+![Overview page](docs/screenshots/overview.png)
+
+**Business unit page**: where one unit's risk comes from, its trend against the goal line,
+its servers and the items contributing most.
+
+![Business unit page](docs/screenshots/business-unit.png)
+
+**Baseline and drift**: sensitive settings waiting for a decision, and unauthorised changes
+traced to the user who made them.
+
+![Baseline and drift page](docs/screenshots/drift.png)
+
+**Patching**: weekly downtime windows and every patch job step by step, including a
+failed job that was rolled back from its snapshot.
+
+![Patching page](docs/screenshots/patching.png)
+
 ## Quick start (no cloud account, nothing to install)
 
 Needs Python 3.9 or later.

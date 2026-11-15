@@ -177,7 +177,7 @@ function pageOverview() {
     ['Track risk', 'Each unit’s risk against its goal line.', L.assessed, ''],
   ];
   const nextIdx = steps.findIndex(s => !s[2]);
-  const sel = S.bus.find(b => b.id === ui.bu) || S.bus.slice().sort((a, b) => (b.history[0] ? b.history[0].score : 0) - (a.history[0] ? a.history[0].score : 0))[0];
+  const sel = S.bus.find(b => b.id === ui.bu) || S.bus.slice().sort((a, b) => (b.score - a.score) || (Math.max(0, ...b.history.map(h => h.score)) - Math.max(0, ...a.history.map(h => h.score))))[0];  // the unit most in need of attention
 
   return `
   <div class="card"><div class="head"><div><h2>Where this company is in the process</h2><div class="hint">The system works through six stages. Finished stages are green; the next one has a button.</div></div></div>

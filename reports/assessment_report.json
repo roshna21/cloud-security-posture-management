@@ -1,6 +1,6 @@
 {
   "run_id": 1,
-  "at": "2026-01-05T09:00:00Z",
+  "at": "2026-11-15T04:48:00Z",
   "findings": [
     {
       "run_id": 1,
@@ -17,7 +17,7 @@
       "detail": "Block Public Access is off, so the bucket can be made public",
       "recommendation": "Turn on all four Block Public Access settings for the bucket.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -34,7 +34,7 @@
       "detail": "The root user has no MFA device",
       "recommendation": "Sign in as root and register an MFA device. This cannot be automated.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -51,7 +51,7 @@
       "detail": "Anyone on the internet can reach port 3306",
       "recommendation": "Remove the 0.0.0.0/0 rule and allow the database port only from the application tier.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -68,7 +68,7 @@
       "detail": "The server has a disk that is not encrypted",
       "recommendation": "Snapshot the volume, copy the snapshot with encryption, and replace the volume in a downtime window.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -85,7 +85,7 @@
       "detail": "This user can sign in to the console without MFA",
       "recommendation": "Have the user register an MFA device, or remove their console password.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -102,7 +102,7 @@
       "detail": "This user has the full administrator policy attached directly",
       "recommendation": "Detach AdministratorAccess and grant only the permissions the user needs, through a group or role.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -119,7 +119,7 @@
       "detail": "The audit trail only covers one region",
       "recommendation": "Make the trail a multi-region trail.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -136,7 +136,7 @@
       "detail": "Anyone on the internet can reach port 22",
       "recommendation": "Remove the 0.0.0.0/0 rule for port 22 and use Systems Manager Session Manager or a restricted source range.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -153,7 +153,7 @@
       "detail": "Anyone on the internet can reach port 3389",
       "recommendation": "Remove the 0.0.0.0/0 rule for port 3389.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -170,7 +170,7 @@
       "detail": "The server still accepts the older, weaker metadata service (IMDSv1)",
       "recommendation": "Set the instance metadata option HttpTokens to required.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -187,7 +187,7 @@
       "detail": "The server still accepts the older, weaker metadata service (IMDSv1)",
       "recommendation": "Set the instance metadata option HttpTokens to required.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -204,7 +204,7 @@
       "detail": "Root can log in over SSH",
       "recommendation": "Set PermitRootLogin no in /etc/ssh/sshd_config and reload sshd.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -221,7 +221,7 @@
       "detail": "The bucket accepts unencrypted (HTTP) requests",
       "recommendation": "Add a bucket policy statement that denies requests where aws:SecureTransport is false.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -238,7 +238,7 @@
       "detail": "New disks are not encrypted by default",
       "recommendation": "Enable EBS encryption by default in the region.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -255,7 +255,7 @@
       "detail": "The password policy allows passwords as short as 8 characters; the baseline requires 14",
       "recommendation": "Set the account password policy minimum length to 14 or more.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -272,7 +272,7 @@
       "detail": "This user's access key is 200 days old; the limit is 90",
       "recommendation": "Create a new access key, update the applications that use it, then deactivate the old key.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -289,7 +289,7 @@
       "detail": "Log file validation is off, so tampering with audit logs would go unnoticed",
       "recommendation": "Enable log file validation on the trail.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -306,7 +306,7 @@
       "detail": "Network flow logging is off",
       "recommendation": "Create a flow log for the VPC that captures rejected traffic at minimum.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -323,7 +323,7 @@
       "detail": "The default security group still has rules",
       "recommendation": "Remove all rules from the default security group and move resources to purpose-built groups.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -340,7 +340,7 @@
       "detail": "SSH accepts passwords instead of keys only",
       "recommendation": "Set PasswordAuthentication no in /etc/ssh/sshd_config and reload sshd.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -357,7 +357,7 @@
       "detail": "Versioning is off, so deleted or overwritten objects cannot be recovered",
       "recommendation": "Enable versioning on the bucket.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -374,7 +374,7 @@
       "detail": "MFA delete is off",
       "recommendation": "Enable MFA delete using the root user's credentials.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -391,7 +391,7 @@
       "detail": "MFA delete is off",
       "recommendation": "Enable MFA delete using the root user's credentials.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -408,7 +408,7 @@
       "detail": "MFA delete is off",
       "recommendation": "Enable MFA delete using the root user's credentials.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -425,7 +425,7 @@
       "detail": "The root user is not protected by a hardware MFA device",
       "recommendation": "Register a hardware MFA device for the root user.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     },
     {
       "run_id": 1,
@@ -442,7 +442,7 @@
       "detail": "Access to the bucket is not being logged",
       "recommendation": "Enable server access logging to the central log bucket.",
       "source": "cspm-check",
-      "created_at": "2026-01-05T09:00:00Z"
+      "created_at": "2026-11-15T04:48:00Z"
     }
   ],
   "stats": {

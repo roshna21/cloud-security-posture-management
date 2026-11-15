@@ -1,6 +1,6 @@
 # Cloud Security Assessment Report: Stride Sports Goods Pvt Ltd
 
-Assessment run 1 at 2026-01-05T09:00:00Z, provider `mock`. Baseline: CIS AWS Foundations Benchmark v3.0.0 and CIS Amazon Linux 2 Benchmark.
+Assessment run 1 at 2026-11-15T04:48:00Z, provider `mock`. Baseline: CIS AWS Foundations Benchmark v3.0.0 and CIS Amazon Linux 2 Benchmark.
 
 ## Summary
 
